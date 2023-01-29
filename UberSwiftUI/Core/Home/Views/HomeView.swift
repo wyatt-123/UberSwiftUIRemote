@@ -14,7 +14,7 @@ struct HomeView: View {
             UBerMapViewRepresentable()
                 .ignoresSafeArea()
             if showLocationSearchView {
-                LocationSearchView()
+                LocationSearchView(showLocationSearchView: $showLocationSearchView)
             } else {
                 LocationSearchActivevationView().padding(.top, 72)
                     .onTapGesture {

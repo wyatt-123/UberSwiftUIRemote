@@ -23,7 +23,7 @@ struct MapViewActionButton: View {
                 .background(.white)
                 .clipShape(Circle())
                 .shadow(color: .black, radius: 6)
-        }.frame(maxWidth: .infinity,alignment: .leading)
+        }.frame(minWidth: 4,maxWidth: .infinity,minHeight: 40,alignment: .leading)
     }
 }
 
