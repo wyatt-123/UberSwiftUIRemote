@@ -26,6 +26,7 @@ struct UBerMapViewRepresentable: UIViewRepresentable{
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
         if let coordinate = locationViewModel.selectedLocationCoordinate{
+            
             context.coordinator.addAndSelectedAnnotation(withCoordinate: coordinate)
             context.coordinator.configurePolyline(withDestinationCoodinate: coordinate)
           				
@@ -69,7 +70,7 @@ extension UBerMapViewRepresentable{
         }
         
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-            let polyline = MKPolygonRenderer(overlay: overlay)
+            let polyline = MKPolylineRenderer(overlay: overlay)
             polyline.strokeColor = .systemBlue
             polyline.lineWidth = 6
             return polyline

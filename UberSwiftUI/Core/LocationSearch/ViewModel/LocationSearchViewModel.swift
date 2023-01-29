@@ -26,9 +26,9 @@ class LocationSearchViewModel: NSObject, ObservableObject{
         searchCompleater.queryFragment = queryFrament
     }
     
-    func selectLocation(_ localsearch:MKLocalSearchCompletion){
-        locationSearch(forLocalSearchCompletion: localsearch){
-            respondse, error in
+    func selectLocation(_ localSearch:MKLocalSearchCompletion){
+        locationSearch(forLocalSearchCompletion: localSearch){
+            response, error in
             
             if let error = error {
                 print("DEBUG :Location search failied with error \(error.localizedDescription)")
@@ -36,7 +36,7 @@ class LocationSearchViewModel: NSObject, ObservableObject{
             }
             
             
-            guard let item = respondse?.mapItems.first else { return }
+            guard let item = response?.mapItems.first else { return }
             let coordinate = item.placemark.coordinate
             self.selectedLocationCoordinate = coordinate
             

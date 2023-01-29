@@ -18,6 +18,7 @@
 		7E371D112984027E000FAD84 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E371D102984027E000FAD84 /* LocationSearchView.swift */; };
 		7E371D132984053C000FAD84 /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E371D122984053C000FAD84 /* LocationSearchResultCell.swift */; };
 		7E371D1729855CE1000FAD84 /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E371D1629855CE1000FAD84 /* LocationSearchViewModel.swift */; };
+		7E371D192986B7E9000FAD84 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E371D182986B7E9000FAD84 /* MapViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7E371D102984027E000FAD84 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		7E371D122984053C000FAD84 /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
 		7E371D1629855CE1000FAD84 /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
+		7E371D182986B7E9000FAD84 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		7E371CF829822CE3000FAD84 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7E371D182986B7E9000FAD84 /* MapViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				7E371D1729855CE1000FAD84 /* LocationSearchViewModel.swift in Sources */,
 				7E371D112984027E000FAD84 /* LocationSearchView.swift in Sources */,
 				7E371D06298235B0000FAD84 /* LocationManager.swift in Sources */,
+				7E371D192986B7E9000FAD84 /* MapViewState.swift in Sources */,
 				7E371D0F298400E7000FAD84 /* MapViewActionButton.swift in Sources */,
 				7E371D0D2983FC88000FAD84 /* LocationSearchActivevationView.swift in Sources */,
 				7E371CEB29822CB0000FAD84 /* UberSwiftUIApp.swift in Sources */,
