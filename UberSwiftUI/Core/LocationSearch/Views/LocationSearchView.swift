@@ -29,11 +29,11 @@ struct LocationSearchView: View {
                 }
                 
                 VStack{
-                    TextField("Current location",text: $statLocationText)
+                    TextField("目前位置",text: $statLocationText)
                         .frame(height: 32)
                         .background(Color(.systemGroupedBackground))
                         .padding(.trailing)
-                    TextField("Where to go",text: $viewModel.queryFrament)
+                    TextField("想去哪呢？",text: $viewModel.queryFrament)
                         .frame(height: 32)
                         .background(Color(.systemGray4))
                         .padding(.trailing)
