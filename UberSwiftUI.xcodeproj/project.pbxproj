@@ -21,6 +21,8 @@
 		7E371D192986B7E9000FAD84 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E371D182986B7E9000FAD84 /* MapViewState.swift */; };
 		7E371D1C298ABACA000FAD84 /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E371D1B298ABACA000FAD84 /* RideRequestView.swift */; };
 		7E371D1E298BDF8A000FAD84 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E371D1D298BDF8A000FAD84 /* RideType.swift */; };
+		7E371D20298D5163000FAD84 /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E371D1F298D5163000FAD84 /* UberLocation.swift */; };
+		7E371D22298D5BEF000FAD84 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E371D21298D5BEF000FAD84 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		7E371D182986B7E9000FAD84 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		7E371D1B298ABACA000FAD84 /* RideRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestView.swift; sourceTree = "<group>"; };
 		7E371D1D298BDF8A000FAD84 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
+		7E371D1F298D5163000FAD84 /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
+		7E371D21298D5BEF000FAD84 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			children = (
 				7E371D182986B7E9000FAD84 /* MapViewState.swift */,
 				7E371D1D298BDF8A000FAD84 /* RideType.swift */,
+				7E371D1F298D5163000FAD84 /* UberLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 		7E371CFC29822CFF000FAD84 /* Extemsions */ = {
 			isa = PBXGroup;
 			children = (
+				7E371D21298D5BEF000FAD84 /* Color.swift */,
 			);
 			path = Extemsions;
 			sourceTree = "<group>";
@@ -272,7 +278,9 @@
 				7E371D192986B7E9000FAD84 /* MapViewState.swift in Sources */,
 				7E371D0F298400E7000FAD84 /* MapViewActionButton.swift in Sources */,
 				7E371D0D2983FC88000FAD84 /* LocationSearchActivevationView.swift in Sources */,
+				7E371D20298D5163000FAD84 /* UberLocation.swift in Sources */,
 				7E371CEB29822CB0000FAD84 /* UberSwiftUIApp.swift in Sources */,
+				7E371D22298D5BEF000FAD84 /* Color.swift in Sources */,
 				7E371D0429822E07000FAD84 /* UberMapViewRepresentable.swift in Sources */,
 				7E371D0229822D8A000FAD84 /* HomeView.swift in Sources */,
 				7E371D132984053C000FAD84 /* LocationSearchResultCell.swift in Sources */,
