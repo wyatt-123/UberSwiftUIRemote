@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RideRequestView: View {
+    @State private var selectedRideType: RideType = .uberX
+    @EnvironmentObject var locationViewModel: LocationSearchViewModel
     var body: some View {
         VStack{
             Capsule()
@@ -70,15 +72,25 @@ struct RideRequestView: View {
                             Image(type.imageName)
                                 .resizable()
                                 .scaledToFit()
-                            VStack{
-                                Text("Uber X")
+                            VStack(alignment:.leading,spacing:4){
+                                Text(type.description)
                                     .font(.system(size: 14, weight: .semibold))
-                                Text("$ 120 NTD") .font(.system(size: 14, weight: .semibold))
-                            }.padding(8)
+                                Text("$\(locationViewModel.computeRidePrice(forType: type))") .font(.system(size: 14, weight: .semibold))
+                            }.padding()
                             
-                        }.frame(width: 112, height: 140)
-                            .background(Color(.systemGroupedBackground))
-                            .cornerRadius(10)
+                        }
+                        
+                        .frame(width: 112, height: 140)
+                        .foregroundColor( type == selectedRideType ? .white : .black)
+                        .background(Color( type == selectedRideType ? .systemBlue : .systemGroupedBackground))
+                        .scaleEffect(type == selectedRideType ? 1.15 : 1.0 )
+                        
+                        .cornerRadius(10)
+                        .onTapGesture {
+                            withAnimation(.spring()){
+                                selectedRideType = type
+                            }
+                        }
                         
                         
                     }
