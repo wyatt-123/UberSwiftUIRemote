@@ -13,6 +13,7 @@ struct RideRequestView: View {
             Capsule()
                 .foregroundColor(Color(.systemGray5))
                 .frame(width: 48, height: 6)
+                .padding(.top, 8)
             // trip info view
             HStack {
                 VStack{
@@ -28,8 +29,8 @@ struct RideRequestView: View {
                 }
                 VStack(alignment: .leading, spacing: 24){
                     HStack{
-                    Text("目前位置")
-                            .font(.system(size: 16))
+                        Text("目前位置")
+                            .font(.system(size: 16, weight: .semibold))
                             .foregroundColor(.gray)
                         Spacer()
                         Text("1:30 PM")
@@ -39,25 +40,98 @@ struct RideRequestView: View {
                     }.padding(.bottom, 10)
                     
                     HStack{
-                    Text("StarBucks Coffee")
-                            .font(.system(size: 16))
-                            .foregroundColor(.gray)
+                        Text("StarBucks Coffee")
+                            .font(.system(size: 16, weight: .semibold))
+                        
                         Spacer()
                         Text("2:30 PM")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.gray)
                         
                     }
-                    
-                    
-                }
-            }
+                }.padding(.leading, 8)
+            }.padding()
+            
+            Divider()
+            
+            
             // ride type selection view
+            Text("推薦的旅程")
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .padding()
+                .foregroundColor(.gray)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            ScrollView(.horizontal){
+                HStack(spacing: 12) {
+                    ForEach(RideType.allCases){ type in
+                        VStack(alignment: .leading){
+                            Image(type.imageName)
+                                .resizable()
+                                .scaledToFit()
+                            VStack{
+                                Text("Uber X")
+                                    .font(.system(size: 14, weight: .semibold))
+                                Text("$ 120 NTD") .font(.system(size: 14, weight: .semibold))
+                            }.padding(8)
+                            
+                        }.frame(width: 112, height: 140)
+                            .background(Color(.systemGroupedBackground))
+                            .cornerRadius(10)
+                        
+                        
+                    }
+                }
+            }.padding(.horizontal)
+            
+            Divider().padding(.vertical, 8)
             
             // payment option view
             
+            HStack(spacing: 12){
+                
+                Text("Visa")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .padding(6)
+                    .background(Color(.systemBlue))
+                    .fontWeight(.semibold)
+                    .cornerRadius(4)
+                    .foregroundColor(.white)
+                    .padding(.leading)
+                
+                Text("****1234")
+                    .fontWeight(.bold)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+                    .imageScale(.medium)
+                    .padding()
+            }
+            .frame(height: 50)
+            .background(Color(.systemGroupedBackground))
+            .cornerRadius(10)
+            .padding(.horizontal)
+            
             // request ride button
+            
+            Button{
+                
+            } label: {
+                Text("確認旅程")
+                    .fontWeight(.bold)
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 50)
+                    
+                    .background(Color(.systemBlue))
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
         }
+        .padding(.bottom, 24)
+        .background(.white)
+        .cornerRadius(12)
     }
 }
 

@@ -29,11 +29,11 @@ struct LocationSearchView: View {
                 }
                 
                 VStack{
-                    TextField("目前位置",text: $statLocationText)
+                    TextField(" 目前位置",text: $statLocationText)
                         .frame(height: 32)
                         .background(Color(.systemGroupedBackground))
                         .padding(.trailing)
-                    TextField("想去哪呢？",text: $viewModel.queryFrament)
+                    TextField(" 想去哪呢？",text: $viewModel.queryFrament)
                         .frame(height: 32)
                         .background(Color(.systemGray4))
                         .padding(.trailing)
@@ -54,9 +54,11 @@ struct LocationSearchView: View {
                     ForEach(viewModel.results, id: \.self){ result in
                         LocationSearchResultCell(title: result.title, subtitle: result.subtitle)
                             .onTapGesture {
-                                viewModel.selectLocation(result)
-                                mapState = .locationSelected
-                                
+                                withAnimation(.spring()){
+                                    viewModel.selectLocation(result)
+                                    mapState = .locationSelected
+                                    
+                                }
                             }
                         
                     }
