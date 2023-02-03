@@ -38,7 +38,7 @@ struct UBerMapViewRepresentable: UIViewRepresentable{
             if let coordinate = locationViewModel.selectedLocationCoordinate{
                 
                 context.coordinator.addAndSelectedAnnotation(withCoordinate: coordinate)
-                context.coordinator.configurePolyline(withDestinationCoodinate: coordinate)
+                context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
         }
         
           	
@@ -62,7 +62,7 @@ extension UBerMapViewRepresentable{
         // MARK - Properties
         
         let parent:UBerMapViewRepresentable
-        var userLocationCoodinate: CLLocationCoordinate2D?
+        var userLocationCoordinate: CLLocationCoordinate2D?
         var currentRegion: MKCoordinateRegion?
         
         // MARK - Life cycle
@@ -76,7 +76,7 @@ extension UBerMapViewRepresentable{
         
         // MARK - MKMapViewDelegate
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-            self.userLocationCoodinate = userLocation.coordinate
+            self.userLocationCoordinate = userLocation.coordinate
             let region = MKCoordinateRegion(
                 center: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude,
                                                longitude: userLocation.coordinate.longitude),
@@ -98,19 +98,19 @@ extension UBerMapViewRepresentable{
         
         // MARK - Helpers
         
-        func addAndSelectedAnnotation(withCoordinate coodinate: CLLocationCoordinate2D){
+        func addAndSelectedAnnotation(withCoordinate coordinate: CLLocationCoordinate2D){
             parent.mapView.removeAnnotations(parent.mapView.annotations)
             let anno = MKPointAnnotation()
-            anno.coordinate = coodinate
+            anno.coordinate = coordinate
             parent.mapView.addAnnotation(anno)
             parent.mapView.selectAnnotation(anno, animated: true)
             
             
         }
         
-        func configurePolyline(withDestinationCoodinate coodinate: CLLocationCoordinate2D){
-            guard let userLocationCoodinate = self.userLocationCoodinate else { return }
-            getDestinationRoute(from: userLocationCoodinate, to: coodinate){
+        func configurePolyline(withDestinationCoordinate coordinate: CLLocationCoordinate2D){
+            guard let userLocationCoordinate = self.userLocationCoordinate else { return }
+            getDestinationRoute(from: userLocationCoordinate, to: coordinate){
                 route in
                 self.parent.mapView.addOverlay(route.polyline)
                 let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,
