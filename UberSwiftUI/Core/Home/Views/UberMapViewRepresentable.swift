@@ -32,9 +32,9 @@ struct UBerMapViewRepresentable: UIViewRepresentable{
         case .noInput:
             context.coordinator.clearMapViewAndRecenterOnUserLocation()
             break
-        case .locationSelected:
-            break
         case .searchingForLocation:
+            break
+        case .locationSelected:
             if let coordinate = locationViewModel.selectedLocationCoordinate{
                 
                 context.coordinator.addAndSelectedAnnotation(withCoordinate: coordinate)
